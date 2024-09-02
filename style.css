@@ -1,9 +1,11 @@
+/* reset css starts */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", system-ui;
 }
+/* reset css ends */
 
 /* Container starts*/
 .container {
@@ -69,7 +71,27 @@
 /* output starts */
 .output {
     height: 30rem;
+    display: none;
 }
+
+/* error handelling styles*/
+.error {
+    height: 24rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.error-img {
+    height: 16rem;
+}
+.error-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+/* error handelling styles */
+
 /* output ends */
 
 /* image starts*/
@@ -138,3 +160,9 @@
     font-size: 1.1rem;
 }
 /* Humidity container ends */
+
+/* display starts*/
+.display {
+    display: block;
+}
+/* display ends */
