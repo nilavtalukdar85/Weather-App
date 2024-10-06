@@ -12,7 +12,7 @@ button.addEventListener('click', () => {
     input.value = '';
 });
 const weatherData = async (inputText) => {
-const key = 'Chori karna paap he!';
+const key = '82b3364f7dfe888d8a3465fddce3122c';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputText}&appid=${key}&units=metric`;
 let data = await fetch(url);
 let response = await data.json();
