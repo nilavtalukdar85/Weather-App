@@ -29,17 +29,26 @@
 
 /* input starts */
 .input {
-    height: 6rem;
+    height: 9rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     padding: 1rem 2rem;
+    margin-top: 1rem;
 }
 /* input ends */
+
+/* auth starts */
+.auth {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
 /* input field starts*/
 .input-field {
     width: 78%;
+    align-self: flex-start;
 }
 .city-input {
     width: 100%;
@@ -54,19 +63,44 @@
 /* input field ends*/
 
 /* search button starts*/
+.search-btn {
+    width: 100%;
+}
 .btn {
+    width: 100%;
+    margin-top: 1rem;
     border: none;
     cursor: pointer;
-    padding: 0.6rem 0.9rem;
-    border-radius: 50%;
-    background-color: rgba(135, 207, 235, 0.377);
-    font-size: 1.2rem;
-    transition: all 0.2s linear 0s;
+    padding: 0.5rem 0.9rem;
+    align-self: stretch;
+    background-color: #fff;
+    border: 2px solid rgba(135, 207, 235, 1);
+    border-radius: 0.5rem;
+    color: rgba(135, 207, 235, 1);
+    font-size: 1rem;
+    transition: all 0.3s linear 0s;
     &:hover {
         color: white;
+        border: 2px solid transparent;
+        background-color: rgba(135, 207, 235, 0.377);
     }
 }
 /* serach button ends */
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+
+}
+#user-button {
+    transform: scale(1.2);
+}
+@media screen and (max-width: 440px) {
+    #app {
+        margin: 0;
+    }
+}
 
 /* output starts */
 .output {

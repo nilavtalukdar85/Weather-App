@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <!-- Font awesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- favicon -->
+    <link rel="icon" href="assets/clear.png">
     <!-- Google fonts cdn -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,11 +24,15 @@
 
             <!-- input starts -->
             <header class="input">
-                <section class="input-field">
-                    <input type="text" class="city-input" name="city" id="city" placeholder="Enter your city">
-                </section>
+                <div class="auth">
+                   <section class="input-field">
+                        <input type="text" class="city-input" name="city" id="city" placeholder="Enter your city">
+                   </section> 
+                   <div id="app"></div>
+                </div>
+                
                 <section class="search-btn">
-                    <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="btn">Search here</button>
                 </section>
             </header>
             <!-- input ends -->
@@ -82,6 +88,37 @@
     <!-- container ends -->
 
     <!-- Javascript file -->
+    <script
+  async
+  crossorigin="anonymous"
+  data-clerk-publishable-key="pk_test_ZGFybGluZy10aWNrLTI1LmNsZXJrLmFjY291bnRzLmRldiQ"
+  src="https://darling-tick-25.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+  type="text/javascript"
+></script>
+
+<script>
+  window.addEventListener('load', async function () {
+    await Clerk.load()
+
+    if (Clerk.user) {
+      document.getElementById('app').innerHTML = `
+        <div id="user-button"></div>
+      `
+
+      const userButtonDiv = document.getElementById('user-button')
+
+      Clerk.mountUserButton(userButtonDiv)
+    } else {
+      document.getElementById('app').innerHTML = `
+        <div id="sign-in"></div>
+      `
+
+      const signInDiv = document.getElementById('sign-in')
+
+      Clerk.mountSignIn(signInDiv)
+    }
+  })
+</script>
     <script src="script.js"></script>
 
 </body>
