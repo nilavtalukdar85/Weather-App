@@ -18,7 +18,7 @@ let data = await fetch(url);
 let response = await data.json();
 if(response.cod == 404) {
     output.classList.remove('display');
-    output.innerHTML = `<img class="error-img" src="assets/404.png">
+    output.innerHTML = `<img class="error-img" src="404.png">
                         <p class="error-text">Not found !</p>`
     output.classList.add('error');
     error.setAttribute('style', '');
@@ -27,17 +27,17 @@ if(response.cod == 404) {
     output.innerHTML = outputContent;
     let weatherImage = document.querySelector('.weather-img');
     if(response.weather[0].main == 'Mist') {
-        weatherImage.setAttribute('src', 'assets/mist.png');
+        weatherImage.setAttribute('src', 'mist.png');
     } else if(response.weather[0].main == 'Clouds') {
-        weatherImage.setAttribute('src', 'assets/cloud.png');
+        weatherImage.setAttribute('src', 'cloud.png');
     } else if(response.weather[0].main == 'Rain') {
-        weatherImage.setAttribute('src', 'assets/rain.png');
+        weatherImage.setAttribute('src', 'rain.png');
     } else if(response.weather[0].main == 'Snow') {
-        weatherImage.setAttribute('src', 'assets/snow.png');
+        weatherImage.setAttribute('src', 'snow.png');
     } else if(response.weather[0].main == 'Clear') {
-        weatherImage.setAttribute('src', 'assets/clear.png');
+        weatherImage.setAttribute('src', 'clear.png');
     } else {
-        weatherImage.setAttribute('src', 'assets/cloud.png');
+        weatherImage.setAttribute('src', 'cloud.png');
     }
     let temp = document.querySelector('.temp-text');
     temp.innerText = response.main.temp;
